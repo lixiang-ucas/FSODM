@@ -125,7 +125,7 @@ python scripts/voc_eval.py results/path/to/comp4_det_test_ cfg/fewtunev3_nwpu_10
 ```
 
 ## Acknowledgements
-This code is heavily borrowed from [YOLO-Low-Shot](https://github.com/bingykang/Fewshot_Detection)
+Large part of the code is borrowed from [YOLO-Low-Shot](https://github.com/bingykang/Fewshot_Detection)
 
 
 ## Citation
