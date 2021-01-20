@@ -18,12 +18,6 @@ Samples of novel class detection result on NWPU VHR-10 and DIOR with 10-shot tra
 <img src="https://user-images.githubusercontent.com/47288017/85242838-ab36fb00-b472-11ea-9ec8-418d06d057a0.png" width="740">
 </div>
 
-The pipeline of the proposed method for few-shot object detection on remote sensing images. Our method consists of three main components: a Meta Feature Extractor, a Reweighting Module, and a Bounding Box Prediction Module. The Feature Extractor network takes a query image as input and produces meta feature maps at three different scales. The Reweighting Module takes as input N support images with labels, one for each class, and outputs three groups of N reweighting vectors. These reweighting vectors are used to recalibrate the meta-feature maps of the same scale through a channel-wise multiplication. The reweighted feature maps are then fed into three independent bounding box detection modules to predict the objectness scores (o), the bounding box locations and sizes (x, y, w, h) and class scores (c) at three different scales.
-
-
-## Abstract
-In this paper, we deal with the problem of object detection on remote sensing images. Previous methods have developed numerous deep CNN-based methods for object detection on remote sensing images and the report remarkable achievements in detection performance and efficiency. However, current CNN-based methods mostly require a large number of annotated samples to train deep neural networks and tend to have limited generalization abilities for unseen object categories. In this paper, we introduce a few-shot learning-based method for object detection on remote sensing images where only a few annotated samples are provided for the unseen object categories. More specifically, our model contains three main components: a meta feature extractor that learns to extract feature representations from input images, a reweighting module that learn to adaptively assign different weights for each feature representation from the support images, and a bounding box prediction module that carries out object detection on the reweighted feature maps. We build our few-shot object detection model upon YOLOv3 architecture and develop a multi-scale object detection framework. Experiments on two benchmark datasets demonstrate that with only a few annotated samples our model can still achieve a satisfying detection performance on remote sensing images and the performance of our model is significantly better than the well-established baseline models.
-
 
 ## Training our model on NWPU VHR-10
 
@@ -129,3 +123,18 @@ Evaluate the Model
 python valid.py cfg/fewtunev3_nwpu_10shot.data cfg/darknet_yolov3_spp.cfg cfg/reweighting_net.cfg path/to/tuned/weightfile
 python scripts/voc_eval.py results/path/to/comp4_det_test_ cfg/fewtunev3_nwpu_10shot.data
 ```
+
+## Acknowledgements
+This code is heavily borrowed from [YOLO-Low-Shot](https://github.com/bingykang/Fewshot_Detection)
+
+
+## Citation
+
+If you find this useful in your research, please consider citing:
+
+  @article{deng2020few,
+  title={Few-shot Object Detection on Remote Sensing Images},
+  author={Deng, Jingyu and Li, Xiang and Fang, Yi},
+  journal={arXiv preprint arXiv:2006.07826},
+  year={2020}
+}
