@@ -1,0 +1,15 @@
+metayolo=1
+metain_type=2
+data=nwpu
+neg = 1
+rand = 0
+novel = data/nwpu_novels.txt
+novelid = 0
+learning_rate=0.001
+steps=-1,64000
+scales=1,0.1
+meta = data/nwpu_traindict_full.txt
+train = /home/mmvc/Jingyu_Deng/few_shot_detector/data/NWPU/training.txt
+valid = /home/mmvc/Jingyu_Deng/few_shot_detector/data/NWPU/evaluation.txt
+backup = backup/metayolov3_nwpu
+gpus=0,1,2,3

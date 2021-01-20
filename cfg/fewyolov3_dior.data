@@ -1,0 +1,16 @@
+metayolo=1
+metain_type=2
+data=dior
+neg = 1
+rand = 0
+novel = data/dior_novels.txt
+novelid = 0
+# scale = 0
+learning_rate=0.001
+steps=-1,6400
+scales=1,0.1
+meta = data/dior_traindict_full.txt
+train = /data/Jingyu_Deng/DIOR/training.txt
+valid = /data/Jingyu_Deng/DIOR/evaluation.txt
+backup = backup/metayolov3_dior
+gpus=0,1,2,3
